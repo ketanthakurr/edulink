@@ -1,68 +1,56 @@
 import React from "react";
+import Background from '../../assets/bg.jpg'
+import "./signup.css";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
-    return (
-        <section className="flex justify-center items-center min-h-screen bg-cover bg-center" 
-                 style={{backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('your-image-url.jpg')"}}>
-            <div className="bg-gray-900 bg-opacity-90 p-10 rounded-lg shadow-lg text-white max-w-md w-full">
-                <h1 className="text-2xl font-light mb-4 text-center">
-                    Create new account<span className="text-blue-500">.</span>
-                </h1>
+    return(
+        <section className="signup-form">
 
-                <p className="text-sm text-gray-400 text-center mb-6">
-                    Already A Member? <a href="login.html" className="text-blue-500 hover:underline">Log In</a>
-                </p>
+            {/* Background image */}
+            <div className="bg_cover bg-center h-screen" style={{backgroundImage: `url(${Background})`, backgroundSize: 'cover'}}>
+                <h2 className="text-stone-50 text-2xl pt-6 pl-12 font-semibold">EduLink</h2>
 
-                <form action="/submit" method="POST" className="space-y-4">
-                    <div className="form-group">
-                        <input 
-                            type="text" 
-                            name="first_name" 
-                            placeholder="First name" 
-                            required 
-                            className="w-full p-3 bg-gray-800 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
-                    </div>
+                <div className="form pt-64 pl-52">
 
-                    <div className="form-group">
-                        <input 
-                            type="text" 
-                            name="last_name" 
-                            placeholder="Last name" 
-                            required 
-                            className="w-full p-3 bg-gray-800 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
-                    </div>
+                    <h1 className="text-6xl font-semibold text-stone-50 ">Create new account<span className="text-7xl text-[#1D90F5]">.</span></h1>
 
-                    <div className="form-group">
-                        <input 
-                            type="email" 
-                            name="email" 
-                            placeholder="Email" 
-                            required 
-                            className="w-full p-3 bg-gray-800 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
-                    </div>
+                    <p class="text-s text-stone-50 pt-5">Already A Member? <span className="text-[#1D90F5] underline underline-offset-2"> <Link to="/login">Log In</Link> </span></p>
 
-                    <div className="form-group">
-                        <input 
-                            type="password" 
-                            name="password" 
-                            placeholder="Password" 
-                            required 
-                            className="w-full p-3 bg-gray-800 text-white rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
-                    </div>
+                    <form action="/submit"  method="POST">
+                        <div className="flex pt-10 pb-2">
 
-                    <button type="submit" className="w-full bg-blue-500 hover:bg-blue-600 text-white p-3 rounded mt-4">
-                        Create Account
-                    </button>
-                </form>
+                            <div class="form-group mr-3 ">
+                                <input className="w-[14.35rem] h-14 p-3 bg-[#2c2c2c] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1D90F5]" type="text" name="first_name" placeholder="First name" required></input>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input className="w-[14.35rem] h-14 p-3 bg-[#2c2c2c] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1D90F5]" type="text" name="last_name" placeholder="Last name" required></input>
+                            </div>
+                        </div>
 
-                <button className="w-full bg-gray-700 hover:bg-gray-600 text-white p-3 rounded mt-4">
-                    Forgot Password
-                </button>
+                        <div class="form-group pt-1 pb-2 ">
+                            <input className="w-[29.5rem] h-14 p-3  bg-[#2c2c2c] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1D90F5]" type="email" name="email" placeholder="Email" required></input>
+                        </div>
+
+                        <div class="form-group pt-1 pb-2">
+                            <input className=" shadow-input w-[29.5rem] h-14 p-3 bg-[#2c2c2c] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1D90F5]" type="password" name="password" placeholder="Password" required></input>
+                        </div>
+
+                        <div className="flex space-x-4 pt-6">
+
+                            <button className="bg-[#1D90F5] text-neutral-50 w-[14rem] px-4 py-2 rounded-full hover:bg-blue-600 transition" type="submit">Create Account</button>
+                           
+                            <button className="bg-gray-500 text-neutral-50 w-[14.5rem] h-12 px-4 py-2 rounded-full hover:bg-gray-600 transition" >Sign In</button>
+
+                        </div>
+                    </form>
+
+
+                </div>
+
             </div>
+
         </section>
     );
 }

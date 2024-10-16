@@ -2,7 +2,11 @@
 module.exports = {
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'btn-blue': '#1D90F5',
+      },
+    },
   },
   plugins: [],
 }
